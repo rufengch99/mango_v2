@@ -23,7 +23,7 @@ public class MyBatisConfig {
         sessionFactory.setTypeAliasesPackage("com.cjh.study.mango.bean.**");
 
         PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
-        sessionFactory.setMapperLocations(resolver.getResources("mapper.**/*.xml"));
+        sessionFactory.setMapperLocations(resolver.getResources("com/cjh/study/mango/mapper/**/*.xml"));
         return sessionFactory.getObject();
     }
 }
