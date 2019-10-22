@@ -1,16 +1,13 @@
 package com.cjh.study.mango.service.sys.impl;
 
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.cjh.study.mango.aop.TestAction;
 import com.cjh.study.mango.bean.sys.SysUser;
 import com.cjh.study.mango.dao.sys.SysUserMapper;
 import com.cjh.study.mango.service.sys.SysUserService;
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
-import java.util.ListIterator;
+import java.util.*;
 
 /**
  * <p>
@@ -23,10 +20,9 @@ import java.util.ListIterator;
 @Service
 public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> implements SysUserService {
 
+    @TestAction(name = "TEST AOP")
     @Override
     public List<SysUser> findAll() {
-
-        //return null;
         return baseMapper.findAll();
     }
 }
